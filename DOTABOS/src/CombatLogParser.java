@@ -17,20 +17,44 @@ public class CombatLogParser {
 		    while ((line = br.readLine()) != null) {
 
 		    	// Create a pattern to match spaces, commas, and fullstops.
-		        Pattern p = Pattern.compile("[,.\\s]+");
+		        Pattern p = Pattern.compile("[',.\\s]+");
 		        // Split bigString into words with the pattern
 		        String[] result = p.split(line);
 		        // find strings matching smallString
 		        
 		        for(int i =0; i < result.length; i++)
 		        {
-		          if( result[i].equals("killed") )
-		            count++;
+		        	//System.out.println(result[i]);
+		          if( result[i].equals(heroes.get(0).heroName) )
+		        	  	heroes.get(0).addLog(line);
+		          if( result[i].equals(heroes.get(1).heroName) )
+			            heroes.get(1).addLog(line);
+		          if( result[i].equals(heroes.get(2).heroName) )
+			            heroes.get(2).addLog(line);
+		          if( result[i].equals(heroes.get(3).heroName) )
+			            heroes.get(3).addLog(line);
+		          if( result[i].equals(heroes.get(4).heroName) )
+			            heroes.get(4).addLog(line);
+		          if( result[i].equals(heroes.get(5).heroName) )
+			            heroes.get(5).addLog(line);
+		          if( result[i].equals(heroes.get(6).heroName) )
+			            heroes.get(6).addLog(line);
+		          if( result[i].equals(heroes.get(7).heroName) )
+			            heroes.get(7).addLog(line);
+		          if( result[i].equals(heroes.get(8).heroName) )
+			            heroes.get(8).addLog(line);
+		          if( result[i].equals(heroes.get(9).heroName) )
+			            heroes.get(9).addLog(line);
+		          count++;
 		        } 
 		       
 		    		
 		      
 		    }//end main while loop 
+		    for(int s = 0; s < heroes.size(); s++){
+		    	System.out.println(heroes.get(s).heroName + ": ");
+		    	heroes.get(s).showOrgLogs();
+		    }
 		    System.out.println( count ); 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -52,7 +76,7 @@ public class CombatLogParser {
 		        for(int i =0; i < result.length; i++)
 		        {
 		        	if(result[i].contains("npc_dota_hero_")){
-		        		System.out.println(result[i]);
+		        		//System.out.println(result[i]);
 		        		if(heroes.isEmpty())
 		        			heroes.add(new Hero(result[i]));
 		        		for(int k = 0; k < heroes.size(); k++){
@@ -60,7 +84,7 @@ public class CombatLogParser {
 		        				if(match == true)
 		        					k = 100; 
 		        		}
-		        		System.out.println(match);
+		        		//System.out.println(match);
 		        		if(match == false){
 		        			heroes.add(new Hero(result[i]));
 		        			j++;
@@ -69,13 +93,14 @@ public class CombatLogParser {
 		        } 
 		    	}
 		    }
-		    for(int v = 0; v < heroes.size(); v++)
-		    	System.out.println(heroes.get(v).heroName);
+		    //for(int v = 0; v < heroes.size(); v++)
+		    	//System.out.println(heroes.get(v).heroName);
 		    br.close();}
 		    catch (FileNotFoundException e) {
 			e.printStackTrace();
 		    } catch (IOException e) {
 			e.printStackTrace();
 		    }
+		return;
 	}
 }
