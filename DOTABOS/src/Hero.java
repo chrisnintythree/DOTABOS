@@ -6,7 +6,7 @@ public class Hero {
  ArrayList<String> logs = new ArrayList<String>();
  ArrayList<String> kills = new ArrayList<String>();
  ArrayList<String> hits = new ArrayList<String>();
- ArrayList<String> recieves = new ArrayList<String>();
+ ArrayList<String> receives = new ArrayList<String>();
  ArrayList<String> buys = new ArrayList<String>();
  ArrayList<String> loses = new ArrayList<String>();
  ArrayList<String> casts = new ArrayList<String>();
@@ -23,8 +23,8 @@ public class Hero {
 			this.buys.add(x);
 		if(x.contains("hits"))
 			this.hits.add(x);
-		if(x.contains("recieves"))
-			this.recieves.add(x);
+		if(x.contains("receives"))
+			this.receives.add(x);
 		if(x.contains("loses"))
 			this.loses.add(x);
 		if(x.contains("casts"))
@@ -43,10 +43,10 @@ public class Hero {
 		{
 		System.out.println(this.hits.get(i));
 		}
-		System.out.println("RECIEVES: ");
-		for(int i = 0; i < recieves.size(); i++)
+		System.out.println("RECEIVES: ");
+		for(int i = 0; i < receives.size(); i++)
 		{
-		System.out.println(this.recieves.get(i));
+		System.out.println(this.receives.get(i));
 		}
 		System.out.println("CASTS: ");
 		for(int i = 0; i < casts.size(); i++)
