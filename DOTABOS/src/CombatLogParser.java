@@ -76,7 +76,6 @@ public class CombatLogParser {
 		        for(int i =0; i < result.length; i++)
 		        {
 		        	if(result[i].contains("npc_dota_hero_")){
-		        		//System.out.println(result[i]);
 		        		if(heroes.isEmpty())
 		        			heroes.add(new Hero(result[i]));
 		        		for(int k = 0; k < heroes.size(); k++){
@@ -84,7 +83,6 @@ public class CombatLogParser {
 		        				if(match == true)
 		        					k = 100; 
 		        		}
-		        		//System.out.println(match);
 		        		if(match == false){
 		        			heroes.add(new Hero(result[i]));
 		        			j++;
@@ -93,8 +91,6 @@ public class CombatLogParser {
 		        } 
 		    	}
 		    }
-		    //for(int v = 0; v < heroes.size(); v++)
-		    	//System.out.println(heroes.get(v).heroName);
 		    br.close();}
 		    catch (FileNotFoundException e) {
 			e.printStackTrace();
